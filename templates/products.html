@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<h1>Our Products</h1>
+
+{% if message %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    </div>
+{% elif products %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Tag</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.tag }}</td>
+            <td>${{ product.price }}</td>
+            <td><img src="{{ url_for('static', filename=product['image_path']) }}" alt="{{ product['name'] }}" class="product-image" width="100%"></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    <div class="alert alert-warning" role="alert">
+        No products available at the moment.
+    </div>
+{% endif %}
+{% endblock %}
