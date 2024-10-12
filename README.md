@@ -23,11 +23,8 @@ Here are some screenshots of the application:
 
 ### Products Page
 
-![Products Page](static/images/products.png)
+![Products Page](static/images/products.jpg)
 
-### Product Detail
-
-![Product Detail](static/images/product_detail_screenshot.png)
   
 ## Installation
 
