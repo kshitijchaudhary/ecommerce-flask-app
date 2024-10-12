@@ -5,44 +5,10 @@
 {% block content %}
 <div class="hero">
     <div class="hero-content">
-        <h1>Welcome to Our E-Commerce Store</h1>
+        <h1>Welcome to Kshitij Online Store</h1>
         <p>Discover amazing products at unbeatable prices!</p>
         <a href="{{ url_for('get_products') }}" class="btn btn-primary btn-lg">Shop Now</a>
     </div>
 </div>
 
-<div class="promo-banner">
-    <div class="promo-content">
-        <h2>Special Offer!</h2>
-        <p>Get 20% off on all products this week. Use code: SUMMER20</p>
-        <a href="{{ url_for('get_products') }}" class="btn btn-light btn-lg">Shop Now</a>
-    </div>
-</div>
-
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Why Choose Us?</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Fast Delivery</h3>
-                <p>Get your products delivered to your doorstep in no time!</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-undo"></i>
-                <h3>Easy Returns</h3>
-                <p>Not satisfied? Return your product within 30 days for a full refund.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-box">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Our customer support team is always here to help you.</p>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}

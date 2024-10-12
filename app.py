@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # MongoDB connection
 client = MongoClient(os.getenv('MONGO_URI'))
-db = client.shop_db
+db = client.shop_db 
 products_collection = db.products
 
 @app.route('/')
