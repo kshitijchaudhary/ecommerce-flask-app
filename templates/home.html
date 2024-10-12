@@ -3,42 +3,46 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to Our E-Commerce Store</h1>
-    <p class="lead">Your one-stop shop for all things awesome!</p>
-    <hr class="my-4">
-    <p>Discover our wide range of high-quality products at unbeatable prices.</p>
-    <a class="btn btn-primary btn-lg" href="{{ url_for('get_products') }}" role="button">Shop Now</a>
-</div>
-
-<div class="row mt-5">
-    <div class="col-md-4">
-        <h2>Quality Products</h2>
-        <p>We offer a curated selection of top-notch products to meet all your needs.</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Great Deals</h2>
-        <p>Enjoy competitive prices and regular promotions on our extensive product range.</p>
-    </div>
-    <div class="col-md-4">
-        <h2>Excellent Service</h2>
-        <p>Our dedicated team is here to provide you with the best shopping experience.</p>
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Our E-Commerce Store</h1>
+        <p>Discover amazing products at unbeatable prices!</p>
+        <a href="{{ url_for('get_products') }}" class="btn btn-primary btn-lg">Shop Now</a>
     </div>
 </div>
 
-<div class="mt-5">
-    <h2>Featured Categories</h2>
+<div class="promo-banner">
+    <div class="promo-content">
+        <h2>Special Offer!</h2>
+        <p>Get 20% off on all products this week. Use code: SUMMER20</p>
+        <a href="{{ url_for('get_products') }}" class="btn btn-light btn-lg">Shop Now</a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Why Choose Us?</h2>
     <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Electronics</h5>
-                    <p class="card-text">Explore our latest gadgets and tech accessories.</p>
-                    <a href="{{ url_for('get_products') }}" class="btn btn-outline-primary">View Electronics</a>
-                </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>Get your products delivered to your doorstep in no time!</p>
             </div>
         </div>
-        <!-- Add more category cards as needed -->
+        <div class="col-md-4">
+            <div class="feature-box">
+                <i class="fas fa-undo"></i>
+                <h3>Easy Returns</h3>
+                <p>Not satisfied? Return your product within 30 days for a full refund.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our customer support team is always here to help you.</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
