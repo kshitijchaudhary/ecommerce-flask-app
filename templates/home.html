@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
+<!--Defining title block-->
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<!--Hero section to display the HTML contents for the webpage-->
 <div class="hero">
     <div class="hero-content">
         <h1>Welcome to Kshitij Online Store</h1>
         <p>Discover amazing products at unbeatable prices!</p>
+        <!--Call to action button to go to products page-->
         <a href="{{ url_for('get_products') }}" class="btn btn-primary btn-lg">Shop Now</a>
     </div>
 </div>
-
 {% endblock %}
