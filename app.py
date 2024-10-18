@@ -10,7 +10,10 @@ load_dotenv()
 app = Flask(__name__)
 
 # MongoDB connection
-client = MongoClient(os.getenv('MONGO_URI'))
+MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+
+client = MongoClient(f'mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 db = client.shop_db 
 products_collection = db.products
 

@@ -1,1 +1,4 @@
-MONGO_URI= "mongodb+srv://root:<db_password>@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+# MONGO_URI=mongodb+srv://<MONGODB_USERNAME>:<MONGODB_PASSWORD>@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+MONGODB_USERNAME = 'MONGODB_USERNAME'
+MONGODB_PASSWORD = 'MONGODB_PASSWORD'
