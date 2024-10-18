@@ -1,0 +1,51 @@
+name: Flask App CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Create .env file
+      run: |
+        echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env
+
+    - name: Check .env file (for demonstration)
+      run: |
+        if [ -f .env ]; then
+          echo ".env file created successfully"
+          cat .env | sed 's/=.*/=****/'
+        else
+          echo ".env file not found"
+          exit 1
+        fi
+
+    - name: Verify environment variable
+      run: |
+        if [ -z "$MONGO_URI" ]; then
+          echo "MONGO_URI is not set"
+          exit 1
+        else
+          echo "MONGO_URI is set"
+        fi
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+
+        run: python app.py
