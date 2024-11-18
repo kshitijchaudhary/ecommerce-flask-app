@@ -9,15 +9,21 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# MongoDB connection
-MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
-MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+# # MongoDB connection
+# MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+# MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+
+# # Ensure MongoDB username and password are retrieved
+# if not MONGODB_USERNAME or not MONGODB_PASSWORD:
+#     raise ValueError("MongoDB credentials are not set in the .env file")
+
+# mongo_uri = f'mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
+mongo_uri = os.getenv('MONGO_URI')
 
 # Ensure MongoDB username and password are retrieved
-if not MONGODB_USERNAME or not MONGODB_PASSWORD:
+if not mongo_uri:
     raise ValueError("MongoDB credentials are not set in the .env file")
-
-mongo_uri = f'mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 
 client = MongoClient(mongo_uri)
