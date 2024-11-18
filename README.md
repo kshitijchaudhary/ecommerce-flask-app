@@ -72,14 +72,33 @@ To ensure the application is functioning as expected, we have written unit tests
 3. Run the tests using pytest:
 `pytest tests/`
 
+4. Once you run the tests, you should see the following output in your terminal. Here is an example of the test results after running `pytest`:
+## Test Complete
+![Complete Test build](static/images/completebuild.jpg)
+
 # Screenshots of Passed Tests in Code Editor
 ## Test Routes
-![Test Routes](static/images/PyTest_tests.jpg)
+![Test Files](static/images/PyTest_tests.jpg)
 
 ![In Github Actions](static/images/PyTest_CI.jpg)
 
-![TestDBRead]
-![TestDBWrite]
+![Test Routes](static/images/Testroutes.jpg)
+
+![In Github Actions](static/images/runtests.jpg)
+
+![Test DB Read](static/images/testdbread.jpg)
+![Test DB Write](static/images/testdbwrite.jpg)
+
+
+## Test Items added
+![Test Items added](static/images/testitemsadded.jpg)
+
+## Network provided to all IPS
+![Network Provided to all IPs](static/images/networkaccessprovided.jpg)
+
+
+
+
 
 
 
