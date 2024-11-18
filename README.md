@@ -54,11 +54,28 @@ Follow these steps to set up the project locally:
 10. Open your browser and go to http://127.0.0.1:5000/.
 
 # Running Tests
-To ensure the application is functioning as expected, we have written unit tests that cover the following aspects:
+In this project, we have implemented three unit tests for a Flask application that interacts with a MongoDB database. The tests cover different aspects of the application, ensuring reliable performance and correct database operations.
 
-- Route Test: Verifies that the routes return the correct HTTP status codes for invalid methods.
-- MongoDB Read Operation: Verifies that the MongoDB connection works by pinging the database.
-- MongoDB Write Operation: Verifies that data can be successfully written to the MongoDB database.
+1. Test 1: Route Test
+Purpose:
+This test verifies the behavior of one of the application’s routes. The test checks the response status code when an invalid request method is used. For example, if the /products route only accepts GET requests, the test sends a POST request to the route and expects a 405 Method Not Allowed status code.
+
+Integration with CI/CD:
+The test uses the Flask test client to simulate HTTP requests. In the GitHub Actions workflow, this test runs automatically with every code change, ensuring that incorrect request methods are handled properly.
+
+2. Test 2: Database Read Operation
+Purpose:
+This test checks if the application can successfully connect to MongoDB and perform a read operation. It sends a ping command to verify that the MongoDB client is connected correctly.
+
+Integration with CI/CD:
+The MongoDB read test runs in the CI/CD pipeline using environment variables for credentials. The GitHub Actions workflow loads these environment variables securely and runs the test to ensure the MongoDB connection is functional before deploying the application.
+
+3. Test 3: Database Write Operation
+Purpose:
+This test validates the write operation to the MongoDB database. It attempts to insert a sample document into the products collection and then queries the database to check if the document was inserted successfully. The test uses assertions to verify the presence of the inserted data.
+
+Integration with CI/CD:
+The write test is part of the automated testing process in GitHub Actions. The pipeline runs the test to ensure that the application can interact with the database and perform write operations correctly. This step helps prevent issues with data insertion before merging changes into the main branch.
 
 ## Steps to Run Tests Locally
 1. Ensure you have installed all dependencies:
