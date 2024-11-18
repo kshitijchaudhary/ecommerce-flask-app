@@ -74,8 +74,9 @@ To ensure the application is functioning as expected, we have written unit tests
 
 # Screenshots of Passed Tests in Code Editor
 ## Test Routes
-![TestRoutes] (static/images/PyTest_tests.jpg)
-![In Github Actions](static/images/PyTest _CI.jpg)
+![Test Routes](static/images/PyTest_tests.jpg)
+
+![In Github Actions](static/images/PyTest_CI.jpg)
 
 ![TestDBRead]
 ![TestDBWrite]
