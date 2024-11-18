@@ -10,8 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 # # MongoDB connection
-# MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
-# MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
+MONGODB_USERNAME = os.getenv('MONGODB_USERNAME')
+MONGODB_PASSWORD = os.getenv('MONGODB_PASSWORD')
 
 # # Ensure MongoDB username and password are retrieved
 # if not MONGODB_USERNAME or not MONGODB_PASSWORD:
