@@ -27,9 +27,10 @@ jobs:
 
       - name: Create .env file for testing
         run: |
-          echo "MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" >> .env  
-          echo "MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> .env 
-          echo "MONGO_URI=mongodb+srv://${{ secrets.MONGODB_USERNAME }}:${{ secrets.MONGODB_PASSWORD }}@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority" >> .env  
+          echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env
+          # echo "MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" >> .env  
+          # echo "MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> .env 
+          # echo "MONGO_URI=mongodb+srv://${{ secrets.MONGO_USERNAME }}:${{ secrets.MONGO_PASSWORD }}@cluster0.deqr1.mongodb.net/?retryWrites=true&w=majority" >> .env  
 
       - name: Run tests
         run: |

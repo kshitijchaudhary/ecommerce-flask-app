@@ -21,6 +21,8 @@ app = Flask(__name__)
 
 mongo_uri = os.getenv('MONGO_URI')
 
+print("connected to",mongo_uri)
+
 # Ensure MongoDB username and password are retrieved
 if not mongo_uri:
     raise ValueError("MongoDB credentials are not set in the .env file")
